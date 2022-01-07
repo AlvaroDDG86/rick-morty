@@ -1,24 +1,12 @@
-# rick-and-morty
+# App vue 3 composition Api
 
-## Project setup
-```
-npm install
-```
+List, router, vuex, axios
+## Techs
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png" width="100" height="100" />
 
-### Compiles and hot-reloads for development
-```
+### Run 
+```sh
+npm i
 npm run serve
-```
-
-### Compiles and minifies for production
-```
 npm run build
 ```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

@@ -1,14 +1,38 @@
 <template>
   <filters-characters-vue></filters-characters-vue>
-  <list-characters-vue></list-characters-vue>
+  <list-vue>
+    <card-character-vue
+      v-for="character in characters"
+      :key="character.id"
+      :character="character"
+    />
+    <div v-if="!characters.length">No results found</div>
+  </list-vue>
 </template>
 <script>
-import ListCharactersVue from "../components/ListCharacters.vue"
+import { computed, onMounted } from 'vue'
+import { useStore } from 'vuex'
+import ListVue from  "../components/List.vue"
 import FiltersCharactersVue from "../components/FiltersCharacters.vue"
+import CardCharacterVue from '../components/CardCharacter.vue'
 export default {
     components: {
-        ListCharactersVue,
-        FiltersCharactersVue
+        ListVue,
+        FiltersCharactersVue,
+        CardCharacterVue
+    },
+    setup() {
+        const store = useStore()
+        const characters = computed(() => {
+            return store.state.characters.charactersFilter
+        })
+
+        onMounted(() => {
+            store.dispatch('characters/getCharacters')
+        })
+        return {
+            characters
+        }
     }
 }
 </script>

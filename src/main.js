@@ -7,6 +7,7 @@ import App from './App.vue'
 import store from './store'
 import VueRouter from 'vue-router'
 import router from './router'
+import ButtonVue from '@/components/Button.vue'
 
 
 const app = createApp(App)
@@ -15,4 +16,5 @@ app.use(VueAxios, axios)
 app.use(VueLoading)
 app.use(VueRouter)
 app.use(router)
+app.component('Button', ButtonVue)
 app.mount('#app')

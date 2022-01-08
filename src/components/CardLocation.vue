@@ -11,6 +11,11 @@
                 <span>Dimension: </span>{{location.dimension}}
             </div>
         </div>
+        <div class="location__actions">
+            <Button>
+                Show more...
+            </Button>
+        </div>
     </article>
 </template>
 <script>
@@ -42,13 +47,31 @@ export default {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    transition: 0.6s;
+
+    &:hover  {
+        background-color: rgb(219, 219, 219);
+        .location__title {
+            transform: rotate(360deg) scale(1.2);
+            padding: 0 0.3em;
+            float: left;
+        }
+        .location__actions {
+            display: block;
+        }
+    }
 
     &__title {
         padding: 0.3em 0;
+        transition: 0.6s;
     }
 
     &__type > span, &__dimension > span {
         font-weight: bold;
+    }
+
+    &__actions {
+        display: none;
     }
 }
 </style>

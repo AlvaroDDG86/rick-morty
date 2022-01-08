@@ -2,10 +2,12 @@ import {
   SET_CHARACTERS,
   SET_CHARACTER_FILTERED,
   SET_CHARACTER,
-  SET_INFO,
-  SET_TEXT,
   SET_STATUS,
 } from "./mutation-types.js";
+import {
+  SET_INFO,
+  SET_TEXT
+} from '../common-mutation-types.js'
 export default {
   [SET_CHARACTERS](state, payload) {
     state.characters = payload;

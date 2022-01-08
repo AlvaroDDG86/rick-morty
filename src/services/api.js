@@ -24,5 +24,13 @@ export default {
     },
     async getCharacter(id) {
         return _axios(`/character/${id}`)
+    },
+    async getLocations({ name, page }) {
+        const queryPage = page ? page + '&' : ''
+        const queryName = name ? `name=${name}&` : ''
+        return _axios(`/location?${queryPage}${queryName}`)
+    },
+    async getLocation(id) {
+        return _axios(`/location/${id}`)
     }
 }

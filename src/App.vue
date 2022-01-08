@@ -28,7 +28,6 @@ body {
   background-color: #333;
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 1fr auto;
 }
 .container {
   padding: 1em 0;
@@ -39,3 +38,4 @@ img.title {
   width: #{"max(40%, 10em)"};
 }
 </style>
+

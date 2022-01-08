@@ -52,6 +52,7 @@ $breakpoint-tablet: 768px;
 
     & a {
       padding: 0.3em 1em !important;
+      font-size: 0.8em;
     }
   }
 
@@ -98,6 +99,16 @@ $breakpoint-tablet: 768px;
           color: chartreuse;
         }
       }
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .skew-menu {
+    height: 3em;
+
+    & a {
+      padding: 0.3em 1em !important;
+      font-size: 0.8em;
     }
   }
 }

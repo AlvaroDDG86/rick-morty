@@ -12,7 +12,7 @@ import { computed, watch } from 'vue'
 import { useStore } from "vuex"
 import {
   SET_TEXT
-} from "@/store/modules/characters/mutation-types.js";
+} from "@/store/modules/common-mutation-types.js";
 export default {
     setup() {
         const store = useStore()

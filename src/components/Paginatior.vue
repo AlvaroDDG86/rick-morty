@@ -2,44 +2,33 @@
   <div class="paginator">
     <h4>Total: {{ total }}</h4>
     <nav class="paginator-navigator">
-      <button :disabled="!prevPage" @click="(_) => navigate(prevPage)">
+      <button :disabled="disabledPrev" @click="(_) => navigate(prevPage)">
         prev
       </button>
-      <button :disabled="!nextPage" @click="(_) => navigate(nextPage)">
+      <button :disabled="disabledNext" @click="(_) => navigate(nextPage)">
         next
       </button>
     </nav>
   </div>
 </template>
 <script>
-import { computed } from 'vue'
-import { useStore } from "vuex"
+import { computed, toRefs } from 'vue'
 export default {
-    setup() {
-        const store = useStore()
-        const navigate = (page) => {
-            store.dispatch('characters/getCharacters', page)
-        }
-        const prevPage = computed(() => {
-          const prevPage = store.state.characters.info.prev
-          if (!prevPage) return ''
-          const indexName = prevPage.indexOf('page=')
-          const indexCut = prevPage.indexOf('&') === -1 ? prevPage.length : prevPage.indexOf('&')
-          return prevPage.substring(indexName, indexCut)
-        })
-        const nextPage = computed(() => {
-          const nextPage = store.state.characters.info.next
-          if (!nextPage) return ''
-          const indexName = nextPage.indexOf('page=')
-          const indexCut = nextPage.indexOf('&') === -1 ? nextPage.length : nextPage.indexOf('&')
-          return nextPage.substring(indexName, indexCut)
-        })
-        return {
-          navigate,
-          total: computed(() => store.state.characters.info.count),
-          prevPage,
-          nextPage
-        }
+    props: ['nextPage', 'prevPage', 'total'],
+    setup(props, { emit }) {
+      const { nextPage, prevPage } = toRefs(props)
+      const disabledNext = computed(() => nextPage.value === '')
+      const disabledPrev = computed(() => prevPage.value === '')
+      function navigate(page) {
+        emit('navigate', page)
+      }
+      return {
+        navigate,
+        disabledNext,
+        disabledPrev,
+        nextPage,
+        prevPage
+      }
     }
 }
 </script>

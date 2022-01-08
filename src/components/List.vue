@@ -12,6 +12,7 @@
     display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+    align-content: flex-start;
 	width: 100%;
 }
 </style>

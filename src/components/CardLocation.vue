@@ -32,9 +32,19 @@ export default {
     width: 310px;
     color: #333;
     overflow: hidden;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.295);
+    padding: 0.5em 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 
     &__title {
-        padding: 1em 0;
+        padding: 0.3em 0;
     }
 
     &__type > span, &__dimension > span {

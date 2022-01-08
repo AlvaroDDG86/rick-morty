@@ -3,26 +3,25 @@
     <input
       type="text"
       placeholder="Search by name"
-      v-model="text"
+      :value="modelValue"
+      @input="(event) => update(event)" 
     />
   </div>
 </template>
 <script>
-import { computed, watch } from 'vue'
-import { useStore } from "vuex"
-import {
-  SET_TEXT
-} from "@/store/modules/common-mutation-types.js";
 export default {
-    setup() {
-        const store = useStore()
-        const text = computed({
-          get: () => store.state.characters.filter.text,
-          set: (text) => store.commit('characters/' + SET_TEXT, text)
-        })
-        watch(text, () => store.dispatch('characters/getCharacters'))
+    props: {
+      modelValue: {
+        type: [String, Number],
+        require: true
+      }
+    },
+    setup(_, { emit }) {
+        function update(event) {
+          emit('update:modelValue', event.target.value)
+        }
         return {
-            text
+            update
         }
     }
 }

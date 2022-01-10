@@ -12,7 +12,8 @@ const routes = [
     { path: '/episodes', component: Episodes},
     { path: '/episode/:id', component: Episode, props: true },
     { path: '/locations', component: Locations },
-    { path: '/location/:id', component: Location, props: true }
+    { path: '/location/:id', component: Location, props: true },
+    { path: "/:catchAll(.*)*", component: () => import('@/views/PageNotFound') }
 ]
 
 

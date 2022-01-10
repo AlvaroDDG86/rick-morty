@@ -27,7 +27,7 @@ export default {
   }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 $breakpoint-tablet: 768px;
 
 .skew-menu {
@@ -55,7 +55,7 @@ $breakpoint-tablet: 768px;
       font-size: 0.8em;
     }
   }
-
+  
   & ul {
     display: inline-block;
     margin: 0;

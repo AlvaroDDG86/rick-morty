@@ -6,7 +6,7 @@
 </template>
 <script>
 </script>
-<style>
+<style scoped>
 .list {
     min-height: 100vh;
     display: flex;

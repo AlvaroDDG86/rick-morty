@@ -61,7 +61,7 @@ export default {
     }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .character {
   display: flex;
   justify-content: center;

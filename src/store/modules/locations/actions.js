@@ -28,7 +28,7 @@ export default {
       commit(SET_LOCATIONS_FILTERED, []);
     }
   },
-  async getCharacter({ commit }, id) {
+  async getLocation({ commit }, id) {
     try {
       const response = await api.getLocation(id);
       commit(SET_LOCATION, response.data);

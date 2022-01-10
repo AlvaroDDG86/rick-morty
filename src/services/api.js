@@ -32,5 +32,13 @@ export default {
     },
     async getLocation(id) {
         return _axios(`/location/${id}`)
+    },
+    async getEpisodes({ name, page }) {
+        const queryPage = page ? page + '&' : ''
+        const queryName = name ? `name=${name}&` : ''
+        return _axios(`/episode?${queryPage}${queryName}`)
+    },
+    async getEpisode(id) {
+        return _axios(`/episode/${id}`)
     }
 }

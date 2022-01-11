@@ -7,7 +7,9 @@ import App from './App.vue'
 import store from './store'
 import VueRouter from 'vue-router'
 import router from './router'
-import ButtonVue from '@/components/Button.vue'
+import ButtonVue from '@/components/BaseButton.vue'
+import BasePaginationVue from '@/components/BasePagination.vue'
+import BaseInputVue from '@/components/BaseInput.vue'
 
 
 const app = createApp(App)
@@ -16,5 +18,7 @@ app.use(VueAxios, axios)
 app.use(VueLoading)
 app.use(VueRouter)
 app.use(router)
-app.component('Button', ButtonVue)
+app.component('BaseButton', ButtonVue)
+app.component('BasePagination', BasePaginationVue)
+app.component('BaseInput', BaseInputVue)
 app.mount('#app')

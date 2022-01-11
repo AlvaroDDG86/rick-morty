@@ -8,7 +8,7 @@
 <script>
 import { computed, onMounted } from 'vue'
 import { useStore } from 'vuex'
-import ListVue from '../components/List.vue'
+import ListVue from '../components/ListLayout.vue'
 import CardEpisodeVue from '../components/CardEpisode.vue'
 export default {
     components: {

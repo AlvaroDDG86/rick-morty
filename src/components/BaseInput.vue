@@ -1,12 +1,12 @@
 <template>
-  <div class="search">
+  <div class="base-input">
     <input
       type="text"
-      placeholder="Search by name"
+      :placeholder="placeholder"
       :value="modelValue"
       @keyup.enter="(event) => update(event)"
     />
-    <span v-show="!!modelValue" class="search__clear" @click="_ => clear()">
+    <span v-show="!!modelValue" class="base-input__clear" @click="_ => clear()">
       X
     </span>
   </div>
@@ -17,6 +17,10 @@ export default {
       modelValue: {
         type: [String, Number],
         require: true
+      },
+      placeholder: {
+        type: String,
+        default: ''
       }
     },
     setup(props, { emit }) {
@@ -34,7 +38,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.search {
+.base-input {
   width: 50%;
   margin-left: 25%;
   display: flex;

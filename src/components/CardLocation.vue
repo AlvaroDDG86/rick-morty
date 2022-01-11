@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="location__actions">
-      <Button @click="_ => navigate()"> Show more... </Button>
+      <BaseButton @click="_ => navigate()"> Show more... </BaseButton>
     </div>
   </article>
 </template>

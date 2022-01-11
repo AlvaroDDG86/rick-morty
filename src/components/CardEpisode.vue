@@ -7,9 +7,9 @@
         {{ episode.episode }}
         <div class="episode__separator"></div>
         {{ episode.air_date}}
-        <Button>
+        <BaseButton>
             Show more...
-        </Button>
+        </BaseButton>
     </p>
   </article>
 </template>

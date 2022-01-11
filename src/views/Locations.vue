@@ -12,7 +12,7 @@
 <script>
 import { computed, onMounted } from 'vue'
 import { useStore } from 'vuex'
-import ListVue from  "../components/List.vue"
+import ListVue from  "../components/ListLayout.vue"
 import FiltersLocationsVue from "../components/FiltersLocations.vue"
 import CardLocationVue from '../components/CardLocation.vue'
 export default {

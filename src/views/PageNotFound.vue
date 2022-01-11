@@ -2,7 +2,7 @@
   <div class="not-found">
     <h1>404</h1>
     <p>Page not found</p>
-    <Button @click="(_) => goHome()"> Go HOME! </Button>
+    <BaseButton @click="(_) => goHome()"> Go HOME! </BaseButton>
     <img :src="require('@/assets/images/not_found.jpg')" alt="rickandmorty" />
   </div>
 </template>

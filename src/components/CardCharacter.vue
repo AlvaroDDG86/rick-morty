@@ -4,13 +4,15 @@
 			<img :src="character.image" :alt="character.name" class="card__image">
 			<figcaption class="card__caption">
 				<h2 class="card__title">{{character.name}}</h2>
-				<p class="card__snippet">{{ character.status }} - {{ character.species }}</p>
+				<p class="card__snippet"><base-icon :name="character.status" size="xl" :color="color" /> {{ character.species }}</p>
+				{{color }}
 				<BaseButton @click="() => navigate(character.id)" class="card__button">Show more</BaseButton>
 			</figcaption>
 		</figure>
 	</div>
 </template>
 <script>
+import { computed } from "vue"
 import { useRouter } from "vue-router"
 export default {
   props: {
@@ -19,13 +21,12 @@ export default {
       require: true
     }
   },
-  setup() {
+  setup(props) {
 	  const router = useRouter()
-	  const navigate = (id) => {
-		  router.push({ path: `/character/${id}`})
-	  }
+	  const color = computed(() => props.character.status === 'unknown' ? 'orange' : props.character.status === 'Dead' ? 'red' : 'green')
 	  return {
-		  navigate
+		  navigate: (id) => router.push({ path: `/character/${id}`}),
+		  color
 	  }
   }
 }
@@ -116,6 +117,9 @@ export default {
 		transition: .5s ease-in-out;
     	-webkit-line-clamp: 5;
 		-webkit-box-orient: vertical;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
 		
 	}
 

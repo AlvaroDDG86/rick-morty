@@ -7,7 +7,7 @@
       @keyup.enter="(event) => update(event)"
     />
     <span v-show="!!modelValue" class="base-input__clear" @click="_ => clear()">
-      X
+      <base-icon name="close" />
     </span>
   </div>
 </template>

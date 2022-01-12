@@ -3,7 +3,7 @@
     <base-pagination v-bind="confPagination" @navigate="navigate"></base-pagination>
 </template>
 <script>
-import { computed, watch, toRefs } from 'vue'
+import { computed, watch } from 'vue'
 import { useStore } from "vuex"
 import { usePaginator } from '../composables/usePaginator';
 import {

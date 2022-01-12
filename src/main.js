@@ -10,7 +10,7 @@ import router from './router'
 import ButtonVue from '@/components/BaseButton.vue'
 import BasePaginationVue from '@/components/BasePagination.vue'
 import BaseInputVue from '@/components/BaseInput.vue'
-
+import BaseIconVue from '@/components/BaseIcon.vue'
 
 const app = createApp(App)
 app.use(store)
@@ -21,4 +21,5 @@ app.use(router)
 app.component('BaseButton', ButtonVue)
 app.component('BasePagination', BasePaginationVue)
 app.component('BaseInput', BaseInputVue)
+app.component('BaseIcon', BaseIconVue)
 app.mount('#app')

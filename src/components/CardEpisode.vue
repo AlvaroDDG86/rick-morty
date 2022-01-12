@@ -1,5 +1,5 @@
 <template>
-  <article class="episode">
+  <div class="episode">
     <h3 class="episode__title">
         {{ episode.name }}
     </h3>
@@ -7,11 +7,11 @@
         {{ episode.episode }}
         <div class="episode__separator"></div>
         {{ episode.air_date}}
-        <BaseButton>
+        <BaseButton @click="_ => navigate(episode.id)">
             Show more...
         </BaseButton>
     </p>
-  </article>
+  </div>
 </template>
 <script>
 import { useRouter } from "vue-router"

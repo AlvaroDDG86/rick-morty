@@ -4,17 +4,9 @@
 </template>
 
 <script>
+import mixinIcons from './mixinIcons'
 export default {
   name: 'IconAlive',
-  props: {
-    color: {
-      type: String,
-      default: '#000'
-    },
-    size: {
-      type: String,
-      default: '1em'
-    }
-  }
+  mixins: [mixinIcons]
 }
 </script>

@@ -4,7 +4,9 @@
 </template>
 
 <script>
+import mixinIcons from './mixinIcons'
 export default {
-  name: 'IconLeft'
+  name: 'IconLeft',
+  mixins: [mixinIcons]
 }
 </script>

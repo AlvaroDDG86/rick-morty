@@ -4,7 +4,9 @@
 </template>
 
 <script>
+import mixinIcons from './mixinIcons'
 export default {
-  name: 'MdiArrowRightBold'
+  name: 'MdiArrowRightBold',
+  mixins: [mixinIcons]
 }
 </script>

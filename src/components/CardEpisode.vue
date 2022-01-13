@@ -1,12 +1,12 @@
 <template>
   <div class="episode">
-    <h3 class="episode__title">
+    <h3 class="episode__title" data-testid="name">
         {{ episode.name }}
     </h3>
     <p class="episode__content">
-        {{ episode.episode }}
-        <div class="episode__separator"></div>
-        {{ episode.air_date}}
+        <span>{{ episode.episode }}</span>
+        <span class="episode__separator"></span>
+        <span>{{ episode.air_date}}</span>
         <BaseButton @click="_ => navigate(episode.id)">
             Show more...
         </BaseButton>
@@ -23,10 +23,9 @@ export default {
     }
   },
   setup(props) {
-      const { episode } = props
       const router = useRouter()
       function navigate(id) {
-          router.push({ path: `/episode/${episode.id}` })
+          router.push({ path: `/episode/${id}` })
       }
       return {
         navigate

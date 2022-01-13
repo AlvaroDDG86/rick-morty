@@ -5,7 +5,6 @@
 			<figcaption class="card__caption">
 				<h2 class="card__title">{{character.name}}</h2>
 				<p class="card__snippet"><base-icon :name="character.status" size="xl" :color="color" /> {{ character.species }}</p>
-				{{color }}
 				<BaseButton @click="() => navigate(character.id)" class="card__button">Show more</BaseButton>
 			</figcaption>
 		</figure>

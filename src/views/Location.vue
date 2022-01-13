@@ -1,9 +1,15 @@
 <template>
-    <div v-if="location" class="location">
-        {{ location.name }}
-        {{ id }}
-        {{ date }}
-    </div>
+  <div v-if="location">
+    <h2>
+      {{ location.name }}
+    </h2>
+    <p>
+      Type: {{ location.type }}
+    </p>
+    <p>
+      Dimension: {{ location.dimension }}
+    </p>
+  </div>
 </template>
 <script>
 import { computed, onMounted, onUnmounted } from '@vue/runtime-core'

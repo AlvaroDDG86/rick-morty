@@ -1,6 +1,14 @@
 <template>
   <div v-if="episode">
-      {{episode.name}}
+      <h2>
+        {{episode.name}}
+      </h2>
+      <p>
+          {{ episode.episode }}
+      </p>
+      <p>
+          {{ episode.air_date }}
+      </p>
   </div>
 </template>
 <script>

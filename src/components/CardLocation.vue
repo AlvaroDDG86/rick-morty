@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="location__actions">
-      <BaseButton @click="_ => navigate()"> Show more... </BaseButton>
+      <BaseButton data-cy="button-nav" @click="_ => navigate()"> Show more... </BaseButton>
     </div>
   </article>
 </template>

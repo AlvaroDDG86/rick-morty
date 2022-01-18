@@ -1,6 +1,6 @@
 <template>
   <filters-characters-vue></filters-characters-vue>
-  <list-vue>
+  <list-vue data-cy="characters-list">
     <card-character-vue
       v-for="character in characters"
       :key="character.id"

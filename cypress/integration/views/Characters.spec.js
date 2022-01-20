@@ -1,6 +1,20 @@
+
 describe('Characters tests', () => {
-    it('shoul loads de view', () => {
-        cy.visit('/')
-        // cy.get('[data-cy="characters-list"]').should('be.visible')
+    beforeEach(() => {
+        cy.visit('http://localhost:8080/');
     })
+    it('should render the list', () => {
+        cy.get('.list')
+            .children()
+            .should('have.length', 20)
+    });
+    it('shoul search', () => {
+        cy.get('input').type('Rick Sanchez{enter}');
+        cy.get('.list')
+            .children()
+            .should('have.length', 4)
+    })
+    it('should filter by status', () => {
+        cy.get('.item').last().should('have.text','unknown').click()
+    });
 })

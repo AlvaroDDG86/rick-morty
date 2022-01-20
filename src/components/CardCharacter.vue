@@ -3,8 +3,8 @@
 		<figure class="card__thumb">
 			<img :src="character.image" :alt="character.name" class="card__image">
 			<figcaption class="card__caption">
-				<h2 class="card__title">{{character.name}}</h2>
-				<p class="card__snippet"><base-icon :name="character.status" size="xl" :color="color" /> {{ character.species }}</p>
+				<h2 class="card__title" data-testid="name">{{character.name}}</h2>
+				<p class="card__snippet" data-testid="species"><base-icon :name="character.status" size="xl" :color="color" /> {{ character.species }}</p>
 				<BaseButton @click="() => navigate(character.id)" class="card__button">Show more</BaseButton>
 			</figcaption>
 		</figure>

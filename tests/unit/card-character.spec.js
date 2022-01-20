@@ -1,7 +1,12 @@
-import { render, fireEvent } from '@testing-library/vue'
+import { mount } from '@vue/test-utils'
 import CardCharacter from '@/components/CardCharacter.vue'
-
-const character = {
+import { useRoute } from 'vue-router'
+jest.mock('vue-router', () => ({
+  useRouter: jest.fn(() => ({
+    push: () => {}
+  }))
+}))
+const STUB = {
   "id": 1,
   "name": "Rick Sanchez",
   "status": "Alive",
@@ -26,10 +31,11 @@ const character = {
   "created": "2017-11-04T18:48:46.250Z"
 }
 
+let wrapper
 function custonRender(options) {
-  return  render(CardCharacter, {
-      props: {
-        character
+  return  mount(CardCharacter, {
+      propsData: {
+        character: STUB
       },
       global: {
         stubs: ['BaseButton', 'BaseIcon']
@@ -39,15 +45,17 @@ function custonRender(options) {
 }
 
 test('Shoul render the name', () => {
-  const { getByText } = custonRender() 
-  getByText(character.name)
-})
-test('Shoul render the image', () => {
-  const { getByAltText  } = custonRender() 
-  const image = getByAltText(character.name)
-  expect(image.src).toBe(character.image)
+  wrapper  = custonRender()
+  const name = wrapper.find('[data-testid="name"]')
+  expect(name.text()).toBe('Rick Sanchez')
 })
 test('Shoul render the species', () => {
-  const { getByText } = custonRender() 
-  getByText(character.species)
+  wrapper  = custonRender()
+  const species = wrapper.find('[data-testid="species"]')
+  expect(species.text()).toBe('Human')
+})
+test('Shoul render the image', () => {
+  wrapper  = custonRender()
+  const image = wrapper.find('img[alt="Rick Sanchez"]')
+  expect(image.attributes().src).toBe('https://rickandmortyapi.com/api/character/avatar/1.jpeg')
 })
